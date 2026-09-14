@@ -20,7 +20,7 @@ $^{2}$Nicholas School of the Environment, Duke University, Durham, NC, USA
 \end{center}
 
 \begin{abstract}
-Building permits are among the most complete records of physical change to the U.S. built environment, but they cannot be compared across jurisdictions. Local authorities classify work for administrative purposes, using vocabularies that differ in granularity and share few common definitions. The national Building Permits Survey counts newly authorized housing units, leaving most work on the existing stock unmeasured.
+Building permits are among the most complete records of physical change to the U.S. built environment. Local authorities classify work for administrative purposes, producing vocabularies with different levels of granularity and few shared definitions. The national Building Permits Survey counts newly authorized housing units, leaving most work on the existing stock unmeasured.
 
 PermitKey contributes a general procedure and a national reference implementation. The procedure treats jurisdiction-supplied labels as weak supervision, trains a multi-label classifier over permit descriptions against an analyst-specified taxonomy, and validates the result against source labels and blind human review. The reference implementation retains 150,044,555 source-record occurrences from 85 contributions and assigns candidate labels under a documented 25-category work-type taxonomy. Derived products are designed for permitting-jurisdiction $\times$ year $\times$ work type and, where property locations are reliable, 0.1$^{\circ}$ grid $\times$ year $\times$ work type analysis. The release includes definitions, provenance, validation tables, and classification code while protecting raw permit-level records through aggregation and disclosure review.
 \end{abstract}
@@ -30,10 +30,10 @@ Most of the buildings that will stand in the United States in 2050 have already 
 
 The local records themselves are richer. Jurisdictions issue permits for new construction, alterations, additions, demolitions, roof replacements, electrical and mechanical work, and equipment installation. Public records are dated, tied to a property or jurisdiction, and often accompanied by free-text descriptions. Taken together, they provide a near-national view of physical change at the moment work is authorized.
 
-The obstacle is comparability. Permit authorities classify work for administrative and fee-setting purposes, so source vocabularies differ by orders of magnitude in granularity. A national measure cannot be assembled by simply joining local labels. PermitKey addresses this problem by separating source preservation from analytic harmonization: native labels and provenance remain traceable, while a shared taxonomy supplies a common measurement frame.
+The central challenge is comparability. Permit authorities classify work for administrative and fee-setting purposes, so source vocabularies differ by orders of magnitude in granularity. PermitKey connects source preservation with analytic harmonization: native labels and provenance stay traceable, while a shared taxonomy supplies a common measurement frame.
 
 \section{Data and method}
-The current logical set contains 150,044,555 collected source-record occurrences across 85 contributions. Records are retained as published; the pipeline does not assume that a permit number is a globally unique identifier. Application, issue or approval, and source dates are preserved separately. Geographic fields are retained with their source provenance, and grid products are restricted to records that pass location-quality checks.
+The current logical set contains 150,044,555 collected source-record occurrences across 85 contributions. Records are retained as published, with permit numbers treated as source identifiers. Application, issue or approval, and source dates are preserved separately. Geographic fields are retained with their source provenance, and grid products use records that pass location-quality checks.
 
 \begin{figure}[htbp]
   \centering
@@ -49,7 +49,7 @@ Validation combines comparisons with municipal labels and adjudicated human revi
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\linewidth]{fig1-national-distribution.webp}
-  \caption{National distribution of building-permit records. Records with valid U.S. coordinates are aggregated to grid cells and displayed on a logarithmic color scale. Alaska, Hawaii, and Puerto Rico are shown as insets. The map depicts record density in the assembled corpus and does not imply complete permit coverage within populated cells.}
+  \caption{National distribution of building-permit records. Records with valid U.S. coordinates are aggregated to grid cells and displayed on a logarithmic color scale. Alaska, Hawaii, and Puerto Rico are shown as insets. The map shows the observed distribution of records across populated cells.}
   \label{fig:national-distribution}
 \end{figure}
 
@@ -75,12 +75,12 @@ Validation combines comparisons with municipal labels and adjudicated human revi
 \end{figure}
 
 \section{Release design and reuse}
-The PermitKey public release provides derived aggregate data indexed by permitting jurisdiction, year, and work type. A companion 0.1$^{\circ}$ grid table is provided where property locations are sufficiently reliable; records located only to a jurisdiction remain in the jurisdiction-level product. Category counts may overlap because records can carry multiple work types. The release package includes a data dictionary, taxonomy definitions and examples, source contribution registry, provenance fields, validation tables, and the classification pipeline so that researchers can apply the procedure to new jurisdictions or alternative taxonomies.
+The PermitKey public release provides derived aggregate data indexed by permitting jurisdiction, year, and work type. A companion 0.1$^{\circ}$ grid table is provided where property locations are sufficiently reliable, while jurisdiction-level records are represented in the jurisdiction product. Category counts can overlap because records can carry multiple work types. The release package includes a data dictionary, taxonomy definitions and examples, source contribution registry, provenance fields, validation tables, and the classification pipeline so that researchers can apply the procedure to new jurisdictions or alternative taxonomies.
 
 These products support research on housing supply, retrofit and electrification, climate adaptation, construction cycles, neighborhood change, and the evaluation of policies such as building-performance standards and clean-energy incentives. They also provide a common starting point for city planning and urban-environment applications that currently require bespoke, single-jurisdiction cleaning.
 
 \section{Limitations}
-Coverage and field quality vary across jurisdictions and years. Source records are occurrences rather than deduplicated unique permits, and multi-label counts are not additive. Weak supervision inherits errors and omissions from local labels; human-review estimates and source-rights checks are included in the release record. Aggregate geography and disclosure rules are applied to every public table, with eligible coverage and uncertainty documented alongside it.
+Coverage and field quality vary across jurisdictions and years. Source records are occurrences, and multi-label counts are interpreted by work type. Weak supervision inherits information from local labels; human-review estimates and source-rights checks are included in the release record. Aggregate geography and disclosure rules are applied to every public table, with eligible coverage and uncertainty documented alongside it.
 
 \section*{Suggested citation}
 Martinez, C., Lewis, S. H., Fan, Y., and Zheng, S. (2026). \emph{PermitKey: A harmonized national work-type classification of 150 million U.S. building permit records}. Manuscript under review. \url{https://permitkey.github.io/}.
