@@ -22,7 +22,7 @@ $^{2}$Nicholas School of the Environment, Duke University, Durham, NC, USA
 \begin{abstract}
 Building permits are among the most complete records of physical change to the U.S. built environment. Local authorities classify work for administrative purposes, producing vocabularies with different levels of granularity and few shared definitions. The national Building Permits Survey counts newly authorized housing units, leaving most work on the existing stock unmeasured.
 
-PermitKey contributes a general procedure and a national reference implementation. The procedure treats jurisdiction-supplied labels as weak supervision, trains a multi-label classifier over permit descriptions against an analyst-specified taxonomy, and validates the result against source labels and blind human review. The reference implementation retains 150,044,555 source-record occurrences from 85 contributions and assigns candidate labels under a documented 25-category work-type taxonomy. Derived tables are designed for permitting-jurisdiction $\times$ year $\times$ work type and, where property locations are reliable, 0.1$^{\circ}$ grid $\times$ year $\times$ work type analysis. The release includes definitions, provenance, validation tables, and classification code while protecting raw permit-level records through aggregation and disclosure review.
+PermitKey combines a general procedure with a national corpus of 150,044,555 source-record occurrences from 85 contributions. The procedure treats jurisdiction-supplied labels as weak supervision, trains a multi-label classifier over permit descriptions against an analyst-specified taxonomy, and validates the result against source labels and blind human review. Candidate labels follow a documented 25-category work-type taxonomy. Derived tables are designed for permitting-jurisdiction $\times$ year $\times$ work type and, where property locations are reliable, 0.1$^{\circ}$ grid $\times$ year $\times$ work type analysis. The release includes definitions, provenance, validation tables, and classification code while protecting raw permit-level records through aggregation and disclosure review.
 \end{abstract}
 
 \section{Background and summary}
@@ -49,7 +49,7 @@ Validation combines comparisons with municipal labels and adjudicated human revi
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\linewidth]{fig1-national-distribution.webp}
-  \caption{National permit-record density on a logarithmic grid; Alaska, Hawaii, and Puerto Rico are shown as insets.}
+  \caption{National permit-record density on a logarithmic grid.}
   \label{fig:national-distribution}
 \end{figure}
 

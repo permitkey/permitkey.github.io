@@ -144,14 +144,15 @@ body {
 }
 
 .site-footer {
-  background: #17233d;
-  color: #dbe7f5;
+  background: #fff;
+  color: #374151;
   padding: 2.5rem 1.5rem;
+  border-top: 1px solid #e5e7eb;
 }
 
-.site-footer a { color: #fff; }
-.site-footer-title { color: #fff; font-size: 1.35rem; font-weight: 700; margin-bottom: .25rem; }
-.site-footer-copy, .site-footer-credit { color: #aebed4; }
+.site-footer a { color: #374151; }
+.site-footer-title { color: #111827; font-size: 1.35rem; font-weight: 700; margin-bottom: .25rem; }
+.site-footer-copy, .site-footer-credit { color: #6b7280; }
 .site-footer-credit { font-size: .85rem; margin-top: .4rem; }
 
 @media screen and (max-width: 768px) {
