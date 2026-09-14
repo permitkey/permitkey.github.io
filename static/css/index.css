@@ -1,5 +1,10 @@
 body {
   font-family: 'Noto Sans', sans-serif;
+  background: #fff;
+}
+
+.has-background-light {
+  background-color: #fff !important;
 }
 
 
