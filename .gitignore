@@ -1,0 +1,11 @@
+.DS_store
+.idea
+http_server.pid
+static/videos/
+static/interpolation/
+static/js/
+static/images/interpolate_*.jpg
+static/images/steve.webm
+static/css/bulma-carousel.min.css
+static/css/bulma-slider.min.css
+static/css/bulma.css.map.txt
