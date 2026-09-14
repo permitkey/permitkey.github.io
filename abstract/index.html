@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PermitKey extended abstract</title>
+  <link rel="stylesheet" href="../static/css/bulma.min.css">
+  <link rel="stylesheet" href="../static/css/index.css?v=20260914">
+  <style>
+    .abstract-page { max-width: 900px; margin: 0 auto; }
+    .abstract-page .content { font-size: 1.05rem; line-height: 1.75; }
+    .abstract-page h1 { letter-spacing: -.02em; }
+    .abstract-meta { color: #52606d; }
+    .abstract-download { margin: 1rem 0 2rem; }
+  </style>
+</head>
+<body>
+  <section class="section"><div class="container abstract-page">
+    <p><a href="../">← PermitKey project page</a></p>
+    <h1 class="title is-2">PermitKey: A harmonized national work-type classification of 150 million U.S. building permit records</h1>
+    <p class="subtitle is-5">Candy Martinez<sup>∗1</sup>, Sean Hardesty Lewis<sup>†1</sup>, Yichun Fan<sup>‡2</sup>, and Siqi Zheng<sup>§1</sup></p>
+    <p class="abstract-meta"><sup>1</sup>Sustainable Urbanization Lab and Center for Real Estate, Massachusetts Institute of Technology, Cambridge, MA, USA<br><sup>2</sup>Nicholas School of the Environment, Duke University, Durham, NC, USA</p>
+    <p class="abstract-download"><a class="button is-link is-light" href="./main.tex">Download LaTeX source</a></p>
+    <div class="content">
+      <h2>Abstract</h2>
+      <p>Building permits are among the most complete records of physical change to the U.S. built environment, but they cannot be compared across jurisdictions. Local authorities classify work for administrative purposes, using vocabularies that differ in granularity and share few common definitions. The national Building Permits Survey counts newly authorized housing units, leaving most work on the existing stock unmeasured.</p>
+      <p>PermitKey contributes a general procedure and a national reference implementation. The procedure treats jurisdiction-supplied labels as weak supervision, trains a multi-label classifier over permit descriptions against an analyst-specified taxonomy, and validates the result against source labels and blind human review. The reference implementation retains 150,044,555 source-record occurrences from 85 contributions and assigns candidate labels under a documented 25-category work-type taxonomy. Derived products are designed for permitting-jurisdiction × year × work type and, where property locations are reliable, 0.1° grid × year × work type analysis. The release includes definitions, provenance, validation tables, and classification code while protecting raw permit-level records through aggregation and disclosure review.</p>
+      <h2>Background and summary</h2>
+      <p>Most of the buildings that will stand in the United States in 2050 have already been built. Whether the country decarbonizes its buildings, adapts them to a hotter and more hazardous climate, and houses a population with evolving ways of living and working therefore depends on what is done to the existing stock: kitchens remodeled, roofs replaced, accessory dwelling units added, electrical panels upgraded, heat pumps and rooftop solar installed, and structures hardened against wind, fire, and flood. The national statistical system sees little of this activity. The Census Bureau’s Building Permits Survey collects from local permit offices primarily the count of newly authorized housing units.</p>
+      <p>The local records themselves are richer. Jurisdictions issue permits for new construction, alterations, additions, demolitions, roof replacements, electrical and mechanical work, and equipment installation. Public records are dated, tied to a property or jurisdiction, and often accompanied by free-text descriptions. Taken together, they provide a near-national view of physical change at the moment work is authorized.</p>
+      <p>The obstacle is comparability. Permit authorities classify work for administrative and fee-setting purposes, so source vocabularies differ by orders of magnitude in granularity. PermitKey addresses this problem by separating source preservation from analytic harmonization: native labels and provenance remain traceable, while a shared taxonomy supplies a common measurement frame.</p>
+      <h2>Data and method</h2>
+      <p>The current logical set contains 150,044,555 collected source-record occurrences across 85 contributions. Records are retained as published; the pipeline does not assume that a permit number is a globally unique identifier. Application, issue or approval, and source dates are preserved separately. Geographic fields are retained with their source provenance, and grid products are restricted to records that pass location-quality checks.</p>
+      <p>Source labels provide abundant but noisy supervision. We normalize descriptions and structured fields, train one independent classifier per work type, and permit multiple labels on a record. Multi-labeling is substantive: a single permit can authorize several related jobs, such as electrical work performed as part of a solar installation. The current Natural25 taxonomy spans construction, alteration, demolition, building systems, exterior work, sitework, and energy technologies.</p>
+      <p>Validation combines comparisons with municipal labels and adjudicated human review. The current audit contains 3,080 completed human judgments, with reviewer agreement reported separately from model performance. A historical held-out-city evaluation of the classification family reports micro-F1 of 0.874; final release estimates will be recomputed after the production label run and documented with class-specific uncertainty.</p>
+      <h2>Release design and reuse</h2>
+      <p>PermitKey is released as derived aggregate data rather than raw permit-level records. The primary table is indexed by permitting jurisdiction, year, and work type. A companion 0.1° grid table is provided only where property locations are sufficiently reliable; records located only to a jurisdiction remain in the jurisdiction-level product. Category counts may overlap because records can carry multiple work types. The release package includes a data dictionary, taxonomy definitions and examples, source contribution registry, provenance fields, validation tables, and the classification pipeline so that researchers can apply the procedure to new jurisdictions or alternative taxonomies.</p>
+      <h2>Limitations</h2>
+      <p>Coverage and field quality vary across jurisdictions and years. Source records are occurrences rather than deduplicated unique permits, and multi-label counts are not additive. Weak supervision inherits errors and omissions from local labels; human-review estimates and source-rights checks therefore remain part of the release protocol. Aggregate geography and disclosure rules are applied before publication, and the public release will state the eligible coverage and uncertainty for every table.</p>
+    </div>
+  </div></section>
+</body>
+</html>
