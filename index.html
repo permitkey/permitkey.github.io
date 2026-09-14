@@ -5,7 +5,7 @@
   <meta name="description" content="PermitKey: harmonized building-permit data across cities and years.">
   <meta name="keywords" content="PermitKey, building permits, open data, construction, cities">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PermitKey: An Open, Harmonized View of Building Permits</title>
+  <title>PermitKey: A harmonized national work-type classification of 150 million U.S. building permit records</title>
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
@@ -15,7 +15,6 @@
     .permit-teaser { background:linear-gradient(135deg,#f7fbff,#eef4ff 58%,#fff8e5); }
     .permit-teaser .hero-body { padding-bottom:2rem; }
     .publication-title { letter-spacing:-.035em; }
-    .publication-venue { color:#2463eb; }
     .permit-figure { width:100%; border-radius:10px; box-shadow:0 12px 35px rgba(20,50,90,.16); }
     .results-carousel .item { background:#fff; padding:1.3rem; min-height:190px; font-size:1rem; }
     .results-carousel .item h3 { font-family:'Google Sans',sans-serif; font-size:1.15rem; font-weight:700; margin:.75rem 0 .4rem; }
@@ -35,10 +34,10 @@
 </nav>
 
 <section class="hero permit-teaser"><div class="hero-body"><div class="container is-max-desktop"><div class="columns is-centered"><div class="column has-text-centered">
-  <h1 class="title is-1 publication-title">PermitKey: An Open, Harmonized View of Building Permits</h1>
-  <div class="is-size-5 publication-authors"><span class="author-block"><a href="mailto:end@mit.edu">Sean Hardesty Lewis</a><sup>1</sup>,</span> <span class="author-block">Candy Martinez<sup>1</sup>,</span> <span class="author-block">Yichun Fan<sup>2</sup>,</span> <span class="author-block">Siqi Zheng<sup>1</sup></span></div>
-  <div class="is-size-5 publication-authors"><span class="author-block"><sup>1</sup>MIT Center for Real Estate,</span> <span class="author-block"><sup>2</sup>Duke University</span></div>
-  <div class="publication-venue">Open-data infrastructure project · 150M+ retained source records</div>
+  <h1 class="title is-1 publication-title">PermitKey: A harmonized national work-type classification of 150 million U.S. building permit records</h1>
+  <div class="is-size-5 publication-authors"><span class="author-block">Candy Martinez<sup>∗1</sup>,</span> <span class="author-block">Sean Hardesty Lewis<sup>†1</sup>,</span> <span class="author-block">Yichun Fan<sup>‡2</sup>,</span> <span class="author-block">and Siqi Zheng<sup>§1</sup></span></div>
+  <div class="is-size-5 publication-authors"><span class="author-block"><sup>1</sup>Sustainable Urbanization Lab and Center for Real Estate, Massachusetts Institute of Technology, Cambridge, MA, USA</span><br><span class="author-block"><sup>2</sup>Nicholas School of the Environment, Duke University, Durham, NC, USA</span></div>
+  
   <div class="column has-text-centered"><div class="publication-links">
     <span class="link-block"><a href="#project" class="external-link button is-normal is-rounded is-dark"><span class="icon"><i class="fas fa-file-alt"></i></span><span>Project brief</span></a></span>
     <span class="link-block"><a href="#method" class="external-link button is-normal is-rounded is-dark"><span class="icon"><i class="fas fa-project-diagram"></i></span><span>Method</span></a></span>
@@ -62,10 +61,8 @@
 
 <section class="section has-background-light" id="release"><div class="container is-max-desktop"><div class="columns is-centered"><div class="column is-four-fifths"><h2 class="title is-3">Data release</h2><div class="release-note"><p class="has-text-weight-bold">Preparation in progress</p><p>The copied collection and candidate pipeline have passed integrity smokes. Geography mapping, source-rights review, disclosure controls, and candidate validation remain before public downloads are enabled.</p><p class="mt-3"><a class="button is-link is-small" href="./data/">Open release status</a></p></div><div class="content has-text-justified mt-5"><p>The release will contain derived aggregates rather than raw permit-level records. Jurisdiction and grid products are distinct tables. Work-type counts can overlap because one source record may carry multiple labels.</p></div></div></div></div></section>
 
-<section class="section"><div class="container is-max-desktop"><div class="columns is-centered"><div class="column is-full-width"><h2 class="title is-3">Team</h2><div class="columns"><div class="column"><div class="team-role"><h3 class="title is-5">Sean Hardesty Lewis</h3><p>Led collection, harmonization, model development, and the reproducible release pipeline.</p></div></div><div class="column"><div class="team-role"><h3 class="title is-5">Candy Martinez</h3><p>Led taxonomy experimentation, stakeholder input, and economic and policy analysis.</p></div></div><div class="column"><div class="team-role"><h3 class="title is-5">Yichun Fan</h3><p>Supported scalable labeling experiments and economic and sustainability analysis.</p></div></div><div class="column"><div class="team-role"><h3 class="title is-5">Siqi Zheng</h3><p>Directed the project, coordinated collaborators, and provided mentorship and strategic guidance.</p></div></div></div></div></div></div></section>
-
 <section class="section" id="BibTeX"><div class="container is-max-desktop content"><h2 class="title">Citation</h2><pre><code>@misc{permitkey,
-  title  = {PermitKey: An Open, Harmonized View of Building Permits},
+  title  = {PermitKey: A harmonized national work-type classification of 150 million U.S. building permit records},
   author = {Lewis, Sean Hardesty and Martinez, Candy and Fan, Yichun and Zheng, Siqi},
   year   = {2026},
   url    = {https://permitkey.github.io}
