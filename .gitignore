@@ -3,7 +3,9 @@
 http_server.pid
 static/videos/
 static/interpolation/
-static/js/
+static/js/*
+!static/js/index.js
+!static/js/bulma-carousel.min.js
 static/images/interpolate_*.jpg
 static/images/steve.webm
 static/css/bulma-carousel.min.css

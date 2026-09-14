@@ -2,44 +2,75 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="PermitKey: an open, harmonized view of building-permit activity across jurisdictions and years.">
-  <meta name="keywords" content="PermitKey, building permits, open data, construction, cities, harmonization">
+  <meta name="description" content="PermitKey: harmonized building-permit data across cities and years.">
+  <meta name="keywords" content="PermitKey, building permits, open data, construction, cities">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PermitKey — Open building-permit intelligence</title>
+  <title>PermitKey: An Open, Harmonized View of Building Permits</title>
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="icon" href="./static/images/favicon.svg">
   <style>
-    :root { --ink:#17212b; --blue:#2463eb; --mint:#ddf5ee; --gold:#f6c453; }
-    body { color:var(--ink); }
-    .navbar { border-bottom:1px solid #eef1f5; }
-    .navbar-item.brand { font-family:"Google Sans",sans-serif; font-weight:700; font-size:1.2rem; color:var(--ink); }
-    .hero.permit-hero { background:linear-gradient(135deg,#f6fbff 0%,#eef5ff 52%,#fff9e9 100%); }
-    .permit-hero .title { letter-spacing:-.03em; }
-    .eyebrow { color:var(--blue); text-transform:uppercase; letter-spacing:.12em; font-weight:700; font-size:.78rem; }
-    .hero-art { border-radius:18px; box-shadow:0 18px 50px rgba(31,55,90,.15); background:#102035; }
-    .stat-card { height:100%; border:1px solid #e7ebf0; border-radius:12px; padding:1.25rem; background:white; }
-    .stat-card .number { font:700 2rem/1 "Google Sans",sans-serif; color:var(--blue); }
-    .stat-card .label { margin-top:.5rem; color:#52606d; }
-    .section-heading { letter-spacing:-.02em; }
-    .method-card { border-top:4px solid var(--blue); }
-    .method-card.is-mint { border-top-color:#27a881; }
-    .method-card.is-gold { border-top-color:var(--gold); }
-    .tag.is-permit { background:var(--mint); color:#12634e; }
-    .release-box { background:#fff8e6; border-left:5px solid var(--gold); }
-    footer { border-top:1px solid #eef1f5; }
-    .small-caps { text-transform:uppercase; letter-spacing:.08em; font-size:.72rem; font-weight:700; color:#667788; }
+    .permit-teaser { background:linear-gradient(135deg,#f7fbff,#eef4ff 58%,#fff8e5); }
+    .permit-teaser .hero-body { padding-bottom:2rem; }
+    .publication-title { letter-spacing:-.035em; }
+    .publication-venue { color:#2463eb; }
+    .permit-figure { width:100%; border-radius:10px; box-shadow:0 12px 35px rgba(20,50,90,.16); }
+    .results-carousel .item { background:#fff; padding:1.3rem; min-height:190px; font-size:1rem; }
+    .results-carousel .item h3 { font-family:'Google Sans',sans-serif; font-size:1.15rem; font-weight:700; margin:.75rem 0 .4rem; }
+    .results-carousel .item p { color:#52606d; line-height:1.55; }
+    .dpermit { font-variant:small-caps; }
+    .release-note { border-left:4px solid #f6c453; background:#fff8e7; padding:1rem 1.25rem; border-radius:5px; }
+    .team-role { border-top:3px solid #3273dc; padding-top:.8rem; }
   </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/index.js"></script>
 </head>
 <body>
-<nav class="navbar" role="navigation" aria-label="main navigation"><div class="container is-max-desktop"><div class="navbar-brand"><a class="navbar-item brand" href="./">PermitKey</a></div><div class="navbar-menu is-active"><div class="navbar-end"><a class="navbar-item" href="#project">Project</a><a class="navbar-item" href="#method">Method</a><a class="navbar-item" href="#release">Data</a><a class="navbar-item" href="https://github.com/permitkey/permitkey.github.io">GitHub</a></div></div></div></nav>
-<section class="hero permit-hero"><div class="hero-body"><div class="container is-max-desktop"><div class="columns is-vcentered is-variable is-7"><div class="column is-6"><p class="eyebrow">Open data for the built environment</p><h1 class="title is-1">A common language for building permits.</h1><p class="subtitle is-4">PermitKey harmonizes public permit records across cities, years, and portal systems, then organizes them into work types that can be compared and reused.</p><div class="buttons"><a class="button is-link is-medium" href="#release">Explore the release</a><a class="button is-light is-medium" href="https://github.com/permitkey/permitkey.github.io">View the source</a></div></div><div class="column is-6"><div class="hero-art"><img src="./static/images/permitkey-hero.svg" alt="A map-like grid connecting permit records to shared work types" style="display:block;width:100%;height:auto;border-radius:18px;"></div></div></div></div></div></section>
-<section class="section" id="project"><div class="container is-max-desktop"><div class="columns is-variable is-6"><div class="column is-7"><p class="eyebrow">Why PermitKey</p><h2 class="title is-2 section-heading">Permit systems speak different dialects.</h2><p class="is-size-5">A roofing permit, a service upgrade, or a new dwelling may appear under entirely different labels from one jurisdiction to the next. PermitKey brings those records into a shared work-type vocabulary while keeping the source and uncertainty visible.</p><p class="mt-4">The result is designed for research on construction, housing, energy, climate policy, and urban change. Researchers can study where work happens, how it changes over time, and how local policies shape the built environment.</p></div><div class="column is-5"><div class="content"><p class="small-caps">Current collection</p><div class="columns is-mobile is-multiline"><div class="column is-6"><div class="stat-card"><div class="number">150M+</div><div class="label">source records retained</div></div></div><div class="column is-6"><div class="stat-card"><div class="number">85</div><div class="label">accepted contributions</div></div></div><div class="column is-6"><div class="stat-card"><div class="number">25</div><div class="label">work-type heads</div></div></div><div class="column is-6"><div class="stat-card"><div class="number">0.1°</div><div class="label">planned grid product</div></div></div></div><p class="is-size-7 has-text-grey">Counts describe collected source records. PermitKey does not claim they are deduplicated unique permits or projects.</p></div></div></div></div></section>
-<section class="section has-background-light" id="method"><div class="container is-max-desktop"><p class="eyebrow">How it works</p><h2 class="title is-2 section-heading">Traceable from portal to work type.</h2><div class="columns is-variable is-5 mt-2"><div class="column"><div class="card method-card"><div class="card-content"><span class="tag is-permit">01 · Collect</span><h3 class="title is-4 mt-4">Preserve the source</h3><p>Public records are collected with their source registry, portal URL, native labels, dates, coordinates, and source-row provenance.</p></div></div></div><div class="column"><div class="card method-card is-mint"><div class="card-content"><span class="tag is-permit">02 · Harmonize</span><h3 class="title is-4 mt-4">Normalize the vocabulary</h3><p>Native permit descriptions and categories are mapped into a documented taxonomy with explicit missingness and multilabel semantics.</p></div></div></div><div class="column"><div class="card method-card is-gold"><div class="card-content"><span class="tag is-permit">03 · Aggregate</span><h3 class="title is-4 mt-4">Compare places and years</h3><p>Reviewed releases will provide jurisdiction × year × work type tables and a companion 0.1° grid where property locations are reliable.</p></div></div></div></div></div></section>
-<section class="section" id="release"><div class="container is-max-desktop"><div class="columns is-variable is-6 is-vcentered"><div class="column is-7"><p class="eyebrow">Data and documentation</p><h2 class="title is-2 section-heading">The release is being prepared in the open.</h2><p class="is-size-5">The first public package will contain aggregate tables, a data dictionary, taxonomy definitions, provenance, and validation notes. It will not expose raw permit-level records.</p><div class="buttons mt-5"><a class="button is-link" href="./data/">Release status</a><a class="button is-light" href="https://github.com/permitkey/permitkey.github.io/issues">Questions and issues</a></div></div><div class="column is-5"><div class="notification release-box"><p class="has-text-weight-bold">Current status</p><p class="mt-2">The copied collection and model pipeline have passed integrity smokes. Geography mapping, source-rights review, disclosure controls, and candidate validation are still being completed before a public data download is enabled.</p></div></div></div></div></section>
-<section class="section has-background-light"><div class="container is-max-desktop"><p class="eyebrow">The team</p><h2 class="title is-2 section-heading">A collaborative research infrastructure project.</h2><div class="columns is-variable is-5"><div class="column"><h3 class="title is-5">Sean Hardesty Lewis</h3><p>Led collection, harmonization, model development, and the reproducible release pipeline.</p></div><div class="column"><h3 class="title is-5">Candy Martinez</h3><p>Designed taxonomy experiments, stakeholder input, and economic and policy analysis.</p></div><div class="column"><h3 class="title is-5">Yichun Fan</h3><p>Supported scalable labeling experiments and economic and sustainability analysis.</p></div><div class="column"><h3 class="title is-5">Siqi Zheng</h3><p>Directed the project, coordinated collaborators, and provided mentorship and strategic guidance.</p></div></div></div></section>
-<footer class="footer has-background-white"><div class="content has-text-centered is-size-7"><p><strong>PermitKey</strong> · Open building-permit intelligence · <a href="mailto:end@mit.edu">end@mit.edu</a></p><p>Website adapted from the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies project-page template</a>, licensed <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. PermitKey data and code terms will be documented separately.</p></div></footer>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand"><a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></a></div>
+  <div class="navbar-menu"><div class="navbar-start" style="flex-grow:1;justify-content:center"><a class="navbar-item" href="./"><span class="icon"><i class="fas fa-key"></i></span>&nbsp;PermitKey</a><div class="navbar-item has-dropdown is-hoverable"><a class="navbar-link">Explore</a><div class="navbar-dropdown"><a class="navbar-item" href="#method">Method</a><a class="navbar-item" href="#release">Data release</a><a class="navbar-item" href="https://github.com/permitkey/permitkey.github.io">Source on GitHub</a></div></div></div></div>
+</nav>
+
+<section class="hero permit-teaser"><div class="hero-body"><div class="container is-max-desktop"><div class="columns is-centered"><div class="column has-text-centered">
+  <h1 class="title is-1 publication-title">PermitKey: An Open, Harmonized View of Building Permits</h1>
+  <div class="is-size-5 publication-authors"><span class="author-block"><a href="mailto:end@mit.edu">Sean Hardesty Lewis</a><sup>1</sup>,</span> <span class="author-block">Candy Martinez<sup>1</sup>,</span> <span class="author-block">Yichun Fan<sup>2</sup>,</span> <span class="author-block">Siqi Zheng<sup>1</sup></span></div>
+  <div class="is-size-5 publication-authors"><span class="author-block"><sup>1</sup>MIT Center for Real Estate,</span> <span class="author-block"><sup>2</sup>Duke University</span></div>
+  <div class="publication-venue">Open-data infrastructure project · 150M+ retained source records</div>
+  <div class="column has-text-centered"><div class="publication-links">
+    <span class="link-block"><a href="#project" class="external-link button is-normal is-rounded is-dark"><span class="icon"><i class="fas fa-file-alt"></i></span><span>Project brief</span></a></span>
+    <span class="link-block"><a href="#method" class="external-link button is-normal is-rounded is-dark"><span class="icon"><i class="fas fa-project-diagram"></i></span><span>Method</span></a></span>
+    <span class="link-block"><a href="https://github.com/permitkey/permitkey.github.io" class="external-link button is-normal is-rounded is-dark"><span class="icon"><i class="fab fa-github"></i></span><span>Code</span></a></span>
+    <span class="link-block"><a href="./data/" class="external-link button is-normal is-rounded is-dark"><span class="icon"><i class="far fa-images"></i></span><span>Data status</span></a></span>
+  </div></div>
+</div></div></div></div></section>
+
+<section class="hero teaser"><div class="container is-max-desktop"><div class="hero-body"><img class="permit-figure" src="./static/images/permitkey-hero.svg" alt="PermitKey connects varied city portal records to shared work types"><h2 class="subtitle has-text-centered mt-5"><span class="dpermit">PermitKey</span> turns fragmented public permit systems into a comparable research frame.</h2></div></div></section>
+
+<section class="hero is-light is-small"><div class="hero-body"><div class="container"><div id="results-carousel" class="carousel results-carousel">
+  <div class="item"><span class="tag is-info is-light">Scale</span><h3>150,044,555 retained records</h3><p>85 accepted contributions are preserved as source-record occurrences, with provenance and native labels intact.</p></div>
+  <div class="item"><span class="tag is-success is-light">Vocabulary</span><h3>25 documented work types</h3><p>Roofing, solar, electrical, new construction, demolition, and related work types can be compared across portals.</p></div>
+  <div class="item"><span class="tag is-warning is-light">Resolution</span><h3>Jurisdiction and 0.1° grid</h3><p>Planned aggregates support jurisdiction × year analysis and a grid product where property locations are reliable.</p></div>
+  <div class="item"><span class="tag is-link is-light">Reuse</span><h3>Built for policy and urban research</h3><p>Study construction, housing, energy, climate policy, and change in the built environment with explicit uncertainty.</p></div>
+</div></div></div></section>
+
+<section class="section" id="project"><div class="container is-max-desktop"><div class="columns is-centered has-text-centered"><div class="column is-four-fifths"><h2 class="title is-3">Project</h2><div class="content has-text-justified"><p>Building-permit portals are valuable public records, but their labels, schemas, coverage windows, and geographic fields differ city by city. PermitKey harmonizes those records into a shared work-type vocabulary while retaining each source’s provenance and missingness.</p><p>The collection is intended as reusable infrastructure for studying construction, housing supply, energy upgrades, climate policy, and urban change. Counts are collected source records; repeated publications and multilabel work types are retained rather than silently deduplicated.</p><p>This site is the public project page. The data page will host reviewed aggregate tables, a data dictionary, taxonomy definitions, provenance, and validation notes when the release gates are complete.</p></div></div></div></div></section>
+
+<section class="section" id="method"><div class="container is-max-desktop"><div class="columns is-centered"><div class="column is-full-width"><h2 class="title is-3">Method</h2><div class="content has-text-justified"><p>PermitKey follows a traceable pipeline: collect public records, preserve source-row provenance, normalize dates and locations, learn or crosswalk work types, and aggregate only after eligibility and disclosure checks.</p></div><div class="columns is-vcentered"><div class="column"><h3 class="title is-4">Collect and preserve</h3><p>Source registries, portal URLs, native categories, descriptions, dates, coordinates, and stable source-occurrence identifiers remain available in the private working copy.</p></div><div class="column"><h3 class="title is-4">Harmonize carefully</h3><p>A documented 25-head candidate classifier adds work-type fields. Missing text is unavailable, not a negative; candidate scores are uncalibrated and the original structured-flag ensemble is not assumed.</p></div><div class="column"><h3 class="title is-4">Aggregate transparently</h3><p>Planned products are permitting jurisdiction × year × work type and a companion 0.1° grid × year × work type for reliably geocoded records.</p></div></div></div></div></div></section>
+
+<section class="section has-background-light" id="release"><div class="container is-max-desktop"><div class="columns is-centered"><div class="column is-four-fifths"><h2 class="title is-3">Data release</h2><div class="release-note"><p class="has-text-weight-bold">Preparation in progress</p><p>The copied collection and candidate pipeline have passed integrity smokes. Geography mapping, source-rights review, disclosure controls, and candidate validation remain before public downloads are enabled.</p><p class="mt-3"><a class="button is-link is-small" href="./data/">Open release status</a></p></div><div class="content has-text-justified mt-5"><p>The release will contain derived aggregates rather than raw permit-level records. Jurisdiction and grid products are distinct tables. Work-type counts can overlap because one source record may carry multiple labels.</p></div></div></div></div></section>
+
+<section class="section"><div class="container is-max-desktop"><div class="columns is-centered"><div class="column is-full-width"><h2 class="title is-3">Team</h2><div class="columns"><div class="column"><div class="team-role"><h3 class="title is-5">Sean Hardesty Lewis</h3><p>Led collection, harmonization, model development, and the reproducible release pipeline.</p></div></div><div class="column"><div class="team-role"><h3 class="title is-5">Candy Martinez</h3><p>Led taxonomy experimentation, stakeholder input, and economic and policy analysis.</p></div></div><div class="column"><div class="team-role"><h3 class="title is-5">Yichun Fan</h3><p>Supported scalable labeling experiments and economic and sustainability analysis.</p></div></div><div class="column"><div class="team-role"><h3 class="title is-5">Siqi Zheng</h3><p>Directed the project, coordinated collaborators, and provided mentorship and strategic guidance.</p></div></div></div></div></div></div></section>
+
+<section class="section" id="BibTeX"><div class="container is-max-desktop content"><h2 class="title">Citation</h2><pre><code>@misc{permitkey,
+  title  = {PermitKey: An Open, Harmonized View of Building Permits},
+  author = {Lewis, Sean Hardesty and Martinez, Candy and Fan, Yichun and Zheng, Siqi},
+  year   = {2026},
+  url    = {https://permitkey.github.io}
+}</code></pre></div></section>
+
+<footer class="footer"><div class="container"><div class="columns is-centered"><div class="column is-8"><div class="content"><p>PermitKey · <a href="mailto:end@mit.edu">end@mit.edu</a> · <a href="https://github.com/permitkey/permitkey.github.io">source repository</a></p><p>This website is adapted from the <a href="https://github.com/nerfies/nerfies.github.io">official Nerfies project-page template</a>, licensed under <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. See <a href="./TEMPLATE_PROVENANCE.md">template provenance</a>. PermitKey data and research code terms will be documented separately.</p></div></div></div></div></footer>
 </body>
 </html>
