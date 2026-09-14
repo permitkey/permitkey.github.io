@@ -5,6 +5,8 @@
 \usepackage{microtype}
 \usepackage{hyperref}
 \usepackage{parskip}
+\usepackage{graphicx}
+\graphicspath{{figures/}}
 
 \title{PermitKey: A harmonized national work-type classification of 150 million U.S. building permit records}
 \author{Candy Martinez$^{\ast 1}$ \and Sean Hardesty Lewis$^{\dagger 1}$ \and Yichun Fan$^{\ddagger 2}$ \and Siqi Zheng$^{\S 1}$}
@@ -36,6 +38,34 @@ The current logical set contains 150,044,555 collected source-record occurrences
 Source labels provide abundant but noisy supervision. We normalize descriptions and structured fields, train one independent classifier per work type, and permit multiple labels on a record. Multi-labeling is substantive: a single permit can authorize several related jobs, such as electrical work performed as part of a solar installation. The current Natural25 taxonomy spans construction, alteration, demolition, building systems, exterior work, sitework, and energy technologies.
 
 Validation combines comparisons with municipal labels and adjudicated human review. The current audit contains 3,080 completed human judgments, with reviewer agreement reported separately from model performance. A historical held-out-city evaluation of the classification family reports micro-F1 of 0.874; final release estimates will be recomputed after the production label run and documented with class-specific uncertainty.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\linewidth]{fig1-national-distribution.webp}
+  \caption{National distribution of building-permit records. Records with valid U.S. coordinates are aggregated to grid cells and displayed on a logarithmic color scale. Alaska, Hawaii, and Puerto Rico are shown as insets. The map depicts record density in the assembled corpus and does not imply complete permit coverage within populated cells.}
+  \label{fig:national-distribution}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\linewidth]{fig2-classification-workflow.webp}
+  \caption{Permit work-type classification and development-validation workflow. Permit descriptions and record fields are transformed into multi-label work-type assignments, then evaluated with municipal weak labels, held-out-city rotation, and an external solar comparison. Displayed metrics are development estimates; final release metrics will be pinned to the frozen label run.}
+  \label{fig:classification-workflow}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\linewidth]{fig3-temporal-class-patterns.webp}
+  \caption{Temporal patterns in selected permit classes. Lines show first-observed class-positive properties across stable reporting jurisdictions and directly geocoded cells, indexed to each series' 2012--2024 maximum. The panels illustrate how harmonized work types can expose technology adoption over time.}
+  \label{fig:temporal-patterns}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\linewidth]{fig4-spatial-technology-adoption.webp}
+  \caption{Cumulative spatial distribution of permit-documented residential technologies through 2024. Solar PV, EV charging, air-source heat pumps, and home batteries are shown on a 0.25-degree grid with class-specific logarithmic scales. The EV panel is an observed lower bound.}
+  \label{fig:technology-adoption}
+\end{figure}
 
 \section{Release design and reuse}
 PermitKey is released as derived aggregate data rather than raw permit-level records. The primary table is indexed by permitting jurisdiction, year, and work type. A companion 0.1$^{\circ}$ grid table is provided only where property locations are sufficiently reliable; records located only to a jurisdiction remain in the jurisdiction-level product. Category counts may overlap because records can carry multiple work types. The release package includes a data dictionary, taxonomy definitions and examples, source contribution registry, provenance fields, validation tables, and the classification pipeline so that researchers can apply the procedure to new jurisdictions or alternative taxonomies.
