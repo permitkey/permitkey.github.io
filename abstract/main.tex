@@ -38,7 +38,7 @@ The current logical set contains 150,044,555 collected source-record occurrences
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\linewidth]{fig1-permitkey-overview.png}
-  \caption{PermitKey overview. Heterogeneous local permitting portals are connected to a shared multi-label work-type vocabulary while source provenance and missingness remain traceable.}
+  \caption{PermitKey overview. Heterogeneous local permitting portals connect to a shared multi-label work-type vocabulary while source provenance and missingness remain traceable.}
   \label{fig:permitkey-overview}
 \end{figure}
 
@@ -75,14 +75,17 @@ Validation combines comparisons with municipal labels and adjudicated human revi
 \end{figure}
 
 \section{Release design and reuse}
-PermitKey is released as derived aggregate data rather than raw permit-level records. The primary table is indexed by permitting jurisdiction, year, and work type. A companion 0.1$^{\circ}$ grid table is provided only where property locations are sufficiently reliable; records located only to a jurisdiction remain in the jurisdiction-level product. Category counts may overlap because records can carry multiple work types. The release package includes a data dictionary, taxonomy definitions and examples, source contribution registry, provenance fields, validation tables, and the classification pipeline so that researchers can apply the procedure to new jurisdictions or alternative taxonomies.
+The PermitKey public release provides derived aggregate data indexed by permitting jurisdiction, year, and work type. A companion 0.1$^{\circ}$ grid table is provided where property locations are sufficiently reliable; records located only to a jurisdiction remain in the jurisdiction-level product. Category counts may overlap because records can carry multiple work types. The release package includes a data dictionary, taxonomy definitions and examples, source contribution registry, provenance fields, validation tables, and the classification pipeline so that researchers can apply the procedure to new jurisdictions or alternative taxonomies.
 
 These products support research on housing supply, retrofit and electrification, climate adaptation, construction cycles, neighborhood change, and the evaluation of policies such as building-performance standards and clean-energy incentives. They also provide a common starting point for city planning and urban-environment applications that currently require bespoke, single-jurisdiction cleaning.
 
 \section{Limitations}
-Coverage and field quality vary across jurisdictions and years. Source records are occurrences rather than deduplicated unique permits, and multi-label counts are not additive. Weak supervision inherits errors and omissions from local labels; human-review estimates and source-rights checks therefore remain part of the release protocol. Aggregate geography and disclosure rules are applied before publication, and the public release will state the eligible coverage and uncertainty for every table.
+Coverage and field quality vary across jurisdictions and years. Source records are occurrences rather than deduplicated unique permits, and multi-label counts are not additive. Weak supervision inherits errors and omissions from local labels; human-review estimates and source-rights checks are included in the release record. Aggregate geography and disclosure rules are applied to every public table, with eligible coverage and uncertainty documented alongside it.
+
+\section*{Suggested citation}
+Martinez, C., Lewis, S. H., Fan, Y., and Zheng, S. (2026). \emph{PermitKey: A harmonized national work-type classification of 150 million U.S. building permit records}. Manuscript under review. \url{https://permitkey.github.io/}.
 
 \section*{Data and code availability}
-The public project page is available at \url{https://permitkey.github.io}. Aggregate tables, documentation, taxonomy definitions, validation results, and classification code will be published there as the release gates are completed. Raw permit-level records remain in the project working environment and are not part of the public release.
+The public project page is available at \url{https://permitkey.github.io}. Aggregate tables, documentation, taxonomy definitions, validation results, and classification code are maintained there as the release package evolves. The public package focuses on aggregate products and supporting metadata.
 
 \end{document}
